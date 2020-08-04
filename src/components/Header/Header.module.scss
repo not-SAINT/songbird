@@ -1,0 +1,35 @@
+@import '../../styles-global/index.module';
+
+.Header {
+  position: relative;
+
+  &__wrapper {
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 10px 20px;
+
+    width: 1200px;
+  }
+
+  &__logo {
+    font-family: 'Satisfy', cursive;
+    font-size: 3rem;
+  }
+
+  &__logo-last {
+    color: $primary-light-color;
+  }
+
+  &__score {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%;
+  }
+}

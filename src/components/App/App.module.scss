@@ -1,16 +1,13 @@
-.App__wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 100%;
+@import '../../styles-global/index.module';
 
-  &-component {
-    align-items: center;
+.App {
+  &__wrapper {
+    margin: 0 auto;
+    width: 1200px;
+  }
+
+  &__answers {
     display: flex;
-    flex: 1 0 auto;
-    justify-content: center;
-    min-height: 620px;
-    position: relative;
-    width: 100%;
+    justify-content: space-between;
   }
 }

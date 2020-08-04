@@ -1,0 +1,16 @@
+@import '../../styles-global/index.module';
+
+.RoundTab {
+  @extend %buttons-border;
+
+  background-color: $secondary-color;
+  color: $primary-dark-color;
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 10px;
+  user-select: none;
+
+  &-active {
+    background-color: $primary-light-color;
+  }
+}

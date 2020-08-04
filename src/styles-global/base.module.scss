@@ -1,27 +1,10 @@
-.Block--hide {
-  opacity: 0;
-  transition: opacity 1s;
-  z-index: -5;
+html {
+  background-color: $main-background-color;
+  font-size: 10px;
 }
 
-.rating-color {
-  &--fail {
-    color: $learning-fail-color;
-  }
-
-  &--bad {
-    color: $learning-bad-color;
-  }
-
-  &--normal {
-    color: $learning-normal-color;
-  }
-
-  &--good {
-    color: $learning-good-color;
-  }
-
-  &--excellent {
-    color: $learning-excellent-color;
-  }
+body {
+  color: $secondary-color;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
 }
