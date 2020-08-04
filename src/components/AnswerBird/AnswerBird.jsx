@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 
+import { playSuccess, playError } from '../../helpers/audio-utils';
+
 import style from './AnswerBird.module.scss';
 
 const AnswerBird = ({
@@ -42,6 +44,7 @@ const AnswerBird = ({
     }
 
     if (answerState === 0 && rightAnswer !== name) {
+      playError();
       setAnswerState(-1);
       increaseCountErrors();
       return null;
@@ -50,6 +53,7 @@ const AnswerBird = ({
     setAnswerState(1);
     setRoundEnd(true);
     increaseScore(5 - countErrors);
+    playSuccess();
 
     return null;
   };
