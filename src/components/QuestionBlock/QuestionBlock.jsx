@@ -8,7 +8,14 @@ import style from './QuestionBlock.module.scss';
 const QuestionBlock = () => {
   return (
     <div className={style.QuestionBlock}>
-      <BirdImage />
+      <div>
+        <BirdImage />
+      </div>
+
+      <div className={style.QuestionBlock__headers}>
+        <h2>************</h2>
+        <hr />
+      </div>
     </div>
   );
 };

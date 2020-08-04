@@ -12,6 +12,8 @@ const NextLevel = ({
   goToNextLevel,
   setRoundEnd,
   resetSelectedAnswers,
+  resetCountErrors,
+  resetCurrentBirdInfo,
 }) => {
   const btnClasses = cn(style.NextLevel, { [style['NextLevel--active']]: isNextRoundReady });
 
@@ -19,10 +21,12 @@ const NextLevel = ({
     // console.log(`currentLevel = ${currentLevel}`);
 
     setRoundEnd(false);
+    resetCountErrors();
+    resetCurrentBirdInfo();
+    resetSelectedAnswers();
 
     if (currentLevel < MAX_LEVEL) {
       goToNextLevel();
-      resetSelectedAnswers();
     }
   };
 
@@ -44,6 +48,8 @@ NextLevel.propTypes = {
   goToNextLevel: PropTypes.func.isRequired,
   setRoundEnd: PropTypes.func.isRequired,
   resetSelectedAnswers: PropTypes.func.isRequired,
+  resetCountErrors: PropTypes.func.isRequired,
+  resetCurrentBirdInfo: PropTypes.func.isRequired,
 };
 
 export default NextLevel;

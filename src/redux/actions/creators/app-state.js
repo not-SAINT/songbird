@@ -1,40 +1,49 @@
-import {
-  SCORE_INCREASE,
-  SCORE_RESET,
-  APP_TAB_SET_ACTIVE,
-  GO_NEXT_LEVEL,
-  ROUND_END,
-  SELECTED_ANSWERS_RESET,
-  SELECTED_ANSWERS_SET,
-} from '../types/action-types';
+import * as aTypes from '../types/action-types';
 
 export const resetScore = () => ({
-  type: SCORE_RESET,
+  type: aTypes.SCORE_RESET,
 });
 
 export const increaseScore = (value) => ({
-  type: SCORE_INCREASE,
+  type: aTypes.SCORE_INCREASE,
   payload: value,
 });
 
 export const setAppTabActive = (value) => ({
-  type: APP_TAB_SET_ACTIVE,
+  type: aTypes.APP_TAB_SET_ACTIVE,
   payload: value,
 });
 
 export const goToNextLevel = () => ({
-  type: GO_NEXT_LEVEL,
+  type: aTypes.GO_NEXT_LEVEL,
 });
 
 export const setRoundEnd = (value) => ({
-  type: ROUND_END,
+  type: aTypes.ROUND_END,
   payload: value,
 });
 
 export const resetSelectedAnswers = () => ({
-  type: SELECTED_ANSWERS_RESET,
+  type: aTypes.SELECTED_ANSWERS_RESET,
 });
 
 export const setSelectedAnswers = () => ({
-  type: SELECTED_ANSWERS_SET,
+  type: aTypes.SELECTED_ANSWERS_SET,
+});
+
+export const increaseCountErrors = () => ({
+  type: aTypes.ERRORS_COUNT_INCREASE,
+});
+
+export const resetCountErrors = () => ({
+  type: aTypes.ERRORS_COUNT_RESET,
+});
+
+export const setCurrentBirdInfo = (value) => ({
+  type: aTypes.CURRENT_BIRD_INFO_SET,
+  payload: value,
+});
+
+export const resetCurrentBirdInfo = () => ({
+  type: aTypes.CURRENT_BIRD_INFO_RESET,
 });

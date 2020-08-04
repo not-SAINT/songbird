@@ -3,7 +3,7 @@
 .NextLevel {
   @extend %buttons-border;
 
-  color: $primary-dark-color;
+  color: $secondary-color;
 
   font-size: 2rem;
   margin: 20px 0;
@@ -12,7 +12,7 @@
   width: 100%;
 
   &--active {
-    background-color: $primary-light-color;
+    background-color: $answer-right-bg;
     cursor: pointer;
   }
 }

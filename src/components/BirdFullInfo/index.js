@@ -1,3 +1,9 @@
+import { connect } from 'react-redux';
+
 import BirdFullInfo from './BirdFullInfo';
 
-export default BirdFullInfo;
+const mapStateToProps = ({ appState: { currentBirdInfo } }) => ({
+  currentBirdInfo,
+});
+
+export default connect(mapStateToProps)(BirdFullInfo);

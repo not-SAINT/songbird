@@ -11,9 +11,11 @@ const AnswersBlock = ({ currentLevel, isNextRoundReady, setSelectedAnswers }) =>
   const rightAnswerID = getRandomAnswerIndex();
   const roundBirds = birds[currentLevel];
   const rightAnswer = roundBirds[rightAnswerID].name;
-  const answers = roundBirds.map(({ id, name }) => {
-    return <AnswerBird answer={name} id={id} rightAnswer={rightAnswer} key={id} />;
+  const answers = roundBirds.map((birdInfo) => {
+    return <AnswerBird rightAnswer={rightAnswer} key={birdInfo.id} birdInfo={birdInfo} />;
   });
+
+  // console.log(`AnswersBlock currentLevel ${currentLevel}`);
 
   useEffect(() => {
     setSelectedAnswers();

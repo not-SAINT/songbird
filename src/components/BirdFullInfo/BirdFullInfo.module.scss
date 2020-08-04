@@ -1,7 +1,23 @@
 @import '../../styles-global/index.module';
 
 .BirdFullInfo {
-  background-color: $primary-light-color;
-  min-height: 400px;
-  width: 48%;
+  @extend %buttons-border;
+  background-color: $info-block-background-color;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 67%;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__headers {
+    margin: 0 10px;
+    width: calc(100% - 170px);
+  }
+
+  &__header {
+    margin: 20px 0 5px;
+  }
 }

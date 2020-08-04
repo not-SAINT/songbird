@@ -5,13 +5,15 @@
 
   align-items: center;
   background-color: transparent;
+  box-sizing: border-box;
   cursor: pointer;
   display: flex;
+
   height: 40px;
   justify-content: center;
-  margin: 5px auto;
+  margin-bottom: 10px;
   user-select: none;
-  width: 90%;
+  width: 100%;
 
   &-right {
     background-color: $answer-right-bg;
@@ -21,5 +23,13 @@
   &-error {
     background-color: $answer-error-bg;
     border-color: $answer-error;
+  }
+
+  &:hover {
+    background-color: $answer-hover-color;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
   }
 }

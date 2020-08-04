@@ -5,14 +5,18 @@ import cn from 'classnames';
 import style from './AnswerBird.module.scss';
 
 const AnswerBird = ({
-  answer,
-  id,
+  birdInfo,
   rightAnswer,
+  countErrors,
   setRoundEnd,
   isNextRoundReady,
   isResetSelectedAnswers,
+  increaseScore,
+  increaseCountErrors,
+  setCurrentBirdInfo,
 }) => {
   const [answerState, setAnswerState] = useState(0);
+  const { id, name } = birdInfo;
 
   const answerClasses = cn(
     style.AnswerBird,
@@ -31,16 +35,21 @@ const AnswerBird = ({
   }, [isResetSelectedAnswers]);
 
   const handlerClick = () => {
-    if (isNextRoundReady) {
+    setCurrentBirdInfo(birdInfo);
+
+    if (isNextRoundReady || answerState < 0) {
       return null;
     }
 
-    if (rightAnswer === answer) {
-      setAnswerState(1);
-      setRoundEnd(true);
-    } else {
+    if (answerState === 0 && rightAnswer !== name) {
       setAnswerState(-1);
+      increaseCountErrors();
+      return null;
     }
+
+    setAnswerState(1);
+    setRoundEnd(true);
+    increaseScore(5 - countErrors);
 
     return null;
   };
@@ -53,18 +62,22 @@ const AnswerBird = ({
       role="button"
       tabIndex={id}
     >
-      <span>{answer}</span>
+      <span>{name}</span>
     </div>
   );
 };
 
 AnswerBird.propTypes = {
-  answer: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired,
+  birdInfo: PropTypes.objectOf(PropTypes.any).isRequired,
+  // id: PropTypes.number.isRequired,
   rightAnswer: PropTypes.string.isRequired,
+  countErrors: PropTypes.number.isRequired,
   isNextRoundReady: PropTypes.bool.isRequired,
   setRoundEnd: PropTypes.func.isRequired,
   isResetSelectedAnswers: PropTypes.bool.isRequired,
+  increaseScore: PropTypes.func.isRequired,
+  increaseCountErrors: PropTypes.func.isRequired,
+  setCurrentBirdInfo: PropTypes.func.isRequired,
 };
 
 export default AnswerBird;
