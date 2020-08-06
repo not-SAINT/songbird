@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import cn from 'classnames';
 
 import { playSuccess, playError } from '../../helpers/audio-utils';
+import { MAX_REWARD } from '../../constants/common';
 
 import style from './AnswerBird.module.scss';
 
@@ -52,7 +53,7 @@ const AnswerBird = ({
 
     setAnswerState(1);
     setRoundEnd(true);
-    increaseScore(5 - countErrors);
+    increaseScore(MAX_REWARD - countErrors);
     playSuccess();
 
     return null;
@@ -73,7 +74,6 @@ const AnswerBird = ({
 
 AnswerBird.propTypes = {
   birdInfo: PropTypes.objectOf(PropTypes.any).isRequired,
-  // id: PropTypes.number.isRequired,
   rightAnswer: PropTypes.string.isRequired,
   countErrors: PropTypes.number.isRequired,
   isNextRoundReady: PropTypes.bool.isRequired,

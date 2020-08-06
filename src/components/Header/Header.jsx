@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import RoundTab from '../RoundTab';
+import ScoreInceaserPanel from '../ScoreInceaserPanel';
 import menuTabs from '../../constants/round-tabs';
 
 import style from './Header.module.scss';
@@ -19,6 +20,7 @@ const Header = ({ score, currentLevel }) => {
           <span className={style['Header__logo-last']}>bird</span>
         </h1>
         <span className={style.Header__score}>{`Очки: ${score}`}</span>
+        <ScoreInceaserPanel />
       </div>
       <div className={style.Header__menu}>{tabs}</div>
     </header>

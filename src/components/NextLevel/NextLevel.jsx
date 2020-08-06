@@ -7,6 +7,7 @@ import { MAX_LEVEL } from '../../constants/common';
 import style from './NextLevel.module.scss';
 
 const NextLevel = ({
+  // score,
   isNextRoundReady,
   currentLevel,
   goToNextLevel,
@@ -28,6 +29,10 @@ const NextLevel = ({
     if (currentLevel < MAX_LEVEL) {
       goToNextLevel();
     }
+
+    if (currentLevel === MAX_LEVEL) {
+      // console.log(`Игра окончена. Итоговый счет: ${score}`);
+    }
   };
 
   return (
@@ -43,6 +48,7 @@ const NextLevel = ({
 };
 
 NextLevel.propTypes = {
+  // score: PropTypes.number.isRequired,
   isNextRoundReady: PropTypes.bool.isRequired,
   currentLevel: PropTypes.number.isRequired,
   goToNextLevel: PropTypes.func.isRequired,

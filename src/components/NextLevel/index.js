@@ -10,7 +10,8 @@ import {
   resetCurrentBirdInfo,
 } from '../../redux/actions/creators/app-state';
 
-const mapStateToProps = ({ appState: { isNextRoundReady, currentLevel } }) => ({
+const mapStateToProps = ({ appState: { score, isNextRoundReady, currentLevel } }) => ({
+  score,
   isNextRoundReady,
   currentLevel,
 });

@@ -1,28 +1,33 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import BirdImage from '../BirdImage';
+import { HIDDEN_BIRD_NAME } from '../../constants/common';
 
 import style from './QuestionBlock.module.scss';
 
-const QuestionBlock = () => {
+const QuestionBlock = ({ rightBirdInfo, isNextRoundReady }) => {
+  const { name, audio, image } = rightBirdInfo;
+  const birdName = isNextRoundReady ? name : HIDDEN_BIRD_NAME;
+
   return (
     <div className={style.QuestionBlock}>
       <div>
-        <BirdImage />
+        <BirdImage imgSrc={image} />
       </div>
 
       <div className={style.QuestionBlock__headers}>
-        <h2>************</h2>
+        <h2 className={style.QuestionBlock__header}>{birdName}</h2>
         <hr />
+        <p>{audio}</p>
       </div>
     </div>
   );
 };
 
 QuestionBlock.propTypes = {
-  // score: PropTypes.number.isRequired,
-  // activeTabId: PropTypes.number.isRequired,
+  rightBirdInfo: PropTypes.objectOf(PropTypes.any).isRequired,
+  isNextRoundReady: PropTypes.bool.isRequired,
 };
 
 export default QuestionBlock;

@@ -1,0 +1,17 @@
+@import '../../styles-global/index.module';
+
+.ScoreInceaserPanel {
+  color: $secondary-color;
+  cursor: default;
+  font-size: 2.5rem;
+  left: calc(50% - 30px);
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  transition: opacity 0.5s 2s;
+  user-select: none;
+
+  &--hide {
+    opacity: 0;
+  }
+}

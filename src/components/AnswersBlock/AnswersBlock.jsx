@@ -3,19 +3,15 @@ import PropTypes from 'prop-types';
 
 import AnswerBird from '../AnswerBird';
 import birds from '../../constants/birds';
-import { getRandomAnswerIndex } from '../../helpers/random-utils';
 
 import style from './AnswersBlock.module.scss';
 
-const AnswersBlock = ({ currentLevel, isNextRoundReady, setSelectedAnswers }) => {
-  const rightAnswerID = getRandomAnswerIndex();
+const AnswersBlock = ({ currentLevel, isNextRoundReady, setSelectedAnswers, rightAnswerID }) => {
   const roundBirds = birds[currentLevel];
   const rightAnswer = roundBirds[rightAnswerID].name;
   const answers = roundBirds.map((birdInfo) => {
     return <AnswerBird rightAnswer={rightAnswer} key={birdInfo.id} birdInfo={birdInfo} />;
   });
-
-  // console.log(`AnswersBlock currentLevel ${currentLevel}`);
 
   useEffect(() => {
     setSelectedAnswers();
@@ -33,6 +29,7 @@ AnswersBlock.propTypes = {
   currentLevel: PropTypes.number.isRequired,
   isNextRoundReady: PropTypes.bool.isRequired,
   setSelectedAnswers: PropTypes.func.isRequired,
+  rightAnswerID: PropTypes.number.isRequired,
 };
 
 export default AnswersBlock;
