@@ -9,12 +9,11 @@ import style from './QuestionBlock.module.scss';
 const QuestionBlock = ({ rightBirdInfo, isNextRoundReady }) => {
   const { name, audio, image } = rightBirdInfo;
   const birdName = isNextRoundReady ? name : HIDDEN_BIRD_NAME;
+  const birdImage = isNextRoundReady ? <BirdImage imgSrc={image} /> : <BirdImage />;
 
   return (
     <div className={style.QuestionBlock}>
-      <div>
-        <BirdImage imgSrc={image} />
-      </div>
+      <div>{birdImage}</div>
 
       <div className={style.QuestionBlock__headers}>
         <h2 className={style.QuestionBlock__header}>{birdName}</h2>

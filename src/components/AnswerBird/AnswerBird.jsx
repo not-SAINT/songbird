@@ -20,9 +20,8 @@ const AnswerBird = ({
 }) => {
   const [answerState, setAnswerState] = useState(0);
   const { id, name } = birdInfo;
-
-  const answerClasses = cn(
-    style.AnswerBird,
+  const indicatorClasses = cn(
+    style.AnswerBird__indicator,
     {
       [style['AnswerBird-error']]: answerState < 0,
     },
@@ -61,13 +60,14 @@ const AnswerBird = ({
 
   return (
     <div
-      className={answerClasses}
+      className={style.AnswerBird}
       onClick={handlerClick}
       onKeyUp={handlerClick}
       role="button"
       tabIndex={id}
     >
       <span>{name}</span>
+      <div className={indicatorClasses} />
     </div>
   );
 };
