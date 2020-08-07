@@ -7,7 +7,6 @@ import { MAX_LEVEL } from '../../constants/common';
 import style from './NextLevel.module.scss';
 
 const NextLevel = ({
-  // score,
   isNextRoundReady,
   currentLevel,
   goToNextLevel,
@@ -19,8 +18,6 @@ const NextLevel = ({
   const btnClasses = cn(style.NextLevel, { [style['NextLevel--active']]: isNextRoundReady });
 
   const handlerNextLevelClick = () => {
-    // console.log(`currentLevel = ${currentLevel}`);
-
     setRoundEnd(false);
     resetCountErrors();
     resetCurrentBirdInfo();
@@ -48,7 +45,6 @@ const NextLevel = ({
 };
 
 NextLevel.propTypes = {
-  // score: PropTypes.number.isRequired,
   isNextRoundReady: PropTypes.bool.isRequired,
   currentLevel: PropTypes.number.isRequired,
   goToNextLevel: PropTypes.func.isRequired,

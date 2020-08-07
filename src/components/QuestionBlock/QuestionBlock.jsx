@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import BirdPlayer from '../BirdPlayer/BirdPlayer';
 import BirdImage from '../BirdImage';
 import { HIDDEN_BIRD_NAME } from '../../constants/common';
 
@@ -14,11 +15,10 @@ const QuestionBlock = ({ rightBirdInfo, isNextRoundReady }) => {
   return (
     <div className={style.QuestionBlock}>
       <div>{birdImage}</div>
-
       <div className={style.QuestionBlock__headers}>
         <h2 className={style.QuestionBlock__header}>{birdName}</h2>
         <hr />
-        <p>{audio}</p>
+        <BirdPlayer src={audio} isStopPlaying={isNextRoundReady} />
       </div>
     </div>
   );
