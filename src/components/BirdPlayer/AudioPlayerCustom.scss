@@ -1,0 +1,20 @@
+@import '../../styles-global/index.module';
+
+/* stylelint-disable scss/dollar-variable-pattern */
+$rhap_theme-color: $primary-light-color; // Color of all buttons and volume/progress indicators
+$rhap_time-color: $secondary-color;
+/* stylelint-enable scss/dollar-variable-pattern */
+
+@import 'react-h5-audio-player/src/styles';
+
+.rhap_controls-section {
+  margin-right: 20px !important;
+}
+
+.rhap_controls-section {
+  flex-grow: 0.3 !important;
+}
+
+.rhap_progress-container {
+  margin: 0 15px !important;
+}

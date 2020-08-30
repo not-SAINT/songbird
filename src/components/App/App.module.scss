@@ -1,0 +1,13 @@
+@import '../../styles-global/index.module';
+
+.App {
+  &__wrapper {
+    margin: 0 auto;
+    width: 1200px;
+  }
+
+  &__answers {
+    display: flex;
+    justify-content: space-between;
+  }
+}
